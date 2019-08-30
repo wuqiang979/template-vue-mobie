@@ -1,0 +1,22 @@
+*{
+	-webkit-overflow-scrolling: touch; //解决移动端滑动卡顿
+}
+
+html, body {
+	height: 100vh;
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	font-size: inherit;
+	color: inherit;
+}
+input, button, textarea {
+	outline: 0;
+	border: 0;
+	/*padding: 0;
+	color: inherit;*/
+	font-size: inherit;
+}

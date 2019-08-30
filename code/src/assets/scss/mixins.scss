@@ -1,0 +1,38 @@
+/**
+ * @author: lvjunyao 
+ * @date: 2019-07-10 17:31:25 
+ */
+
+@mixin flex-common($justify-content: center, $align-items: center) {
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+@mixin overflow-hiding {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: break-all;
+}
+
+@mixin overflow-hiding-more($line: 2) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	word-break: break-all;
+	-webkit-line-clamp: $line; // 最多显示8行
+    // /*! autoprefixer: off */
+    /*! autoprefixer: ignore next */
+    -moz-box-orient: vertical;
+    /*! autoprefixer: ignore next */    
+	-webkit-box-orient: vertical;
+	// /*! autoprefixer: on */
+}
+
+@mixin font-setting ($lineHeight: 38,$fontSize: 28, $color: #333, $fontWeight: normal) {
+	line-height: px2rem($lineHeight);
+	font-size: px2rem($fontSize);
+	font-weight: $fontWeight;
+	color: $color;
+}

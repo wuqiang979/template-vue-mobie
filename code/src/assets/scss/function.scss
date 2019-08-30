@@ -1,0 +1,19 @@
+/**
+ * @author: YouJie 
+ * @date: 2018-12-17 14:08:01 
+ * px 转 rem 函数
+ */
+
+  
+/* --------Colors---------- */
+$--color-primary: #EF271A;
+$--color-primary-sec: #F8493E;
+
+$c333: #333;
+$c666: #666;
+$c999: #999;
+$cp: #c0c4cc;
+
+@function px2rem($px) {
+    @return ($px / 75) * 1rem;
+}
