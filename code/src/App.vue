@@ -2,20 +2,14 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-30 12:08:54
- * @LastEditTime: 2019-08-30 17:12:34
+ * @LastEditTime: 2019-09-03 11:35:11
  * @LastEditors: Please set LastEditors
  -->
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <div></div>
-      <a href="">1235455</a>
-      <div></div>
-      <input type="text">
-    </div>
-    <router-view/>
+    <transition name="slide-left">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -37,5 +31,25 @@
       color: #42b983;
     }
   }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+.child-view {
+  position: absolute;
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+  transform: translate(30px, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-30px, 0);
+  transform: translate(-30px, 0);
 }
 </style>

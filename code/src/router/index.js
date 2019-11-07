@@ -1,6 +1,13 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-30 12:08:54
+ * @LastEditTime: 2019-09-02 16:03:30
+ * @LastEditors: Please set LastEditors
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import lazyLoadView from '@/utils/lazy-load-view'
 
 Vue.use(Router)
 
@@ -11,7 +18,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => lazyLoadView(import('@/views/Home.vue'))
     },
     {
       path: '/about',
@@ -19,7 +26,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => lazyLoadView(import('@/views/About.vue'))
     }
   ]
 })
